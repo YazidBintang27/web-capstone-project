@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('layouts.auth');
+        return view('layouts.auth', ['title' => 'Login']);
     }
 
     public function login(Request $request)
