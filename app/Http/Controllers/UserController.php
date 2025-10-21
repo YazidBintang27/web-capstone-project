@@ -54,8 +54,8 @@ class UserController extends Controller
             'phone_number' => 'required|string|max:15',
             'address' => 'required|string|max:255',
             'nik' => 'required|string|max:20',
-            'profile_picture' => 'nullable|string',
-            'password' => 'required|min:6|confirmed',
+            'profile_picture' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'password' => 'required|string|min:6|confirmed',
             'role' => ['required', Rule::in($allowedRoles)],
         ]);
 

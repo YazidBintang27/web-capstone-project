@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MotherController;
 use App\Http\Controllers\ChildController;
 use App\Http\Controllers\ImmunizationController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WeighingController;
 
 Route::get('/', function () {
@@ -30,4 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('immunizations', ImmunizationController::class);
 
     Route::resource('weighings', WeighingController::class);
+    
+    Route::resource('profile', ProfileController::class)->only(['index', 'edit', 'update']);
 });
