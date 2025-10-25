@@ -18,7 +18,7 @@
         <x-table>
             <thead class="bg-gray-500">
                 <tr>
-                    <td class="border border-black px-5 py-1 text-lg text-white font-medium text-center">Nama</td>
+                    <td class="border border-black px-5 py-1 text-lg text-white font-medium text-center">Nama Balita</td>
                     <td class="border border-black px-5 py-1 text-lg text-white font-medium text-center">Tinggi Badan</td>
                     <td class="border border-black px-5 py-1 text-lg text-white font-medium text-center">Berat Badan</td>
                     <td class="border border-black px-5 py-1 text-lg text-white font-medium text-center">Tanggal Timbang</td>
