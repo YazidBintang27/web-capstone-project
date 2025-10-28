@@ -4,70 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{asset('images/Logo Digital Posyandu.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/Logo Digital Posyandu.png') }}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
-    <title>Data Penimbangan Balita</title>
+    <title>Edit Data Penimbangan Balita</title>
 </head>
-<body class="flex overflow-auto box-border">
+<body class="flex overflow-auto box-border font-[Open_Sans]">
     <x-sidebar/>
     <main class="grow-5 mx-7.5">
-        <h2 class="font-extrabold text-5xl mb-2 mt-10">Tambah Data Penimbangan Balita</h2>
+        <h2 class="font-bold text-4xl text-gray-800 mb-2 mt-10">Edit Data Penimbangan Balita</h2>
         <div class="flex w-inherit justify-end mt-16 mx-5">
-            <button type="button" aria-disabled="false"
-                class="group inline-flex items-center justify-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed bg-gray-700 stroke-white px-6 text-white hover:bg-gray-950 h-[42px] min-w-[42px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100">
+            <a href="{{ route('weighings.index') }}"
+                class="group inline-flex items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out bg-gray-700 stroke-white px-6 text-white hover:bg-gray-950 h-[42px] gap-2">
                 <span class="material-symbols-outlined text-white">arrow_back</span>
                 <div class="text-base">Kembali</div>
-            </button>
+            </a>
         </div>
-        <form method="post" class="w-inherit mt-10">
-            <fieldset class="w-inherit flex gap-10">
-                <fieldset class="grow-1">
-                    <label class="font-medium transition-colors duration-300 ease-in-out peer-disabled:opacity-70 text-xs whitespace-nowrap text-black" for="mothersName">Nama Balita</label>
-                    <div class="relative w-full">
-                        <input
-                        class="w-full rounded-lg border border-slate-200 px-3 text-sm font-medium placeholder-slate-400 outline-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:placeholder-slate-400 focus:border-blue-600 py-2 mb-0.5"
-                        aria-disabled="false" aria-describedby=":S2:" id="mothersName" placeholder="Masukan Nama Balita...">
-                    </div>
-                </fieldset>
-                <fieldset class="grow-1">
-                    <label class="font-medium transition-colors duration-300 ease-in-out peer-disabled:opacity-70 text-xs whitespace-nowrap text-black" for="mothersNik">Masukan Tinggi Badan</label>
-                    <div class="relative w-full">
-                        <input
-                        class="w-full rounded-lg border border-slate-200 px-3 text-sm font-medium placeholder-slate-400 outline-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:placeholder-slate-400 focus:border-blue-600 py-2 mb-0.5"
-                        aria-disabled="false" aria-describedby=":S2:" id="mothersNik" placeholder="Masukan TB..." type="number">
-                    </div>
-                </fieldset>
-            </fieldset>
-            <fieldset class="w-inherit flex mt-5 gap-5">
-                <fieldset class="grow-1">
-                    <label class="font-medium transition-colors duration-300 ease-in-out peer-disabled:opacity-70 text-xs whitespace-nowrap text-black" for="mothersBirth">Tanggal Timbang Balita</label>
-                    <input class="w-full rounded-lg border border-slate-200 px-3 text-sm font-medium placeholder-slate-400 outline-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:placeholder-slate-400 focus:border-blue-600 py-2 mb-0.5" aria-disabled="false" aria-describedby=":S2:" id="mothersBirth" placeholder="Text field" type="date">
-                </fieldset>
-                <fieldset class="grow-1 ml-10">
-                    <label class="font-medium transition-colors duration-300 ease-in-out peer-disabled:opacity-70 text-xs whitespace-nowrap text-black" for="telNumber">Berat Badan</label>
-                    <input class="w-full rounded-lg border border-slate-200 px-3 text-sm font-medium placeholder-slate-400 outline-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:placeholder-slate-400 focus:border-blue-600 py-2 mb-0.5" aria-disabled="false" aria-describedby=":S2:" id="telNumber" placeholder="Masukan Nomor BB..." type="number">
-                </fieldset>
-            </fieldset>
-            <fieldset class="mt-5">
-                <fieldset>
-                    <label class="font-medium transition-colors duration-300 ease-in-out peer-disabled:opacity-70 text-xs whitespace-nowrap text-black" for="mothersNik">Masukan nama Ibu</label>
-                    <div class="relative w-full">
-                        <input
-                        class="w-full rounded-lg border border-slate-200 px-3 text-sm font-medium placeholder-slate-400 outline-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:placeholder-slate-400 focus:border-blue-600 py-2 mb-0.5"
-                        aria-disabled="false" aria-describedby=":S2:" id="mothersNik" placeholder="Masukan Nama Ibu..." required>
-                    </div>
-                </fieldset>
-            </fieldset>
-            <div class="inline-flex gap-5">
-                <button type="submit" aria-disabled="false"
-                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed bg-blue-700 stroke-white px-6 text-white hover:bg-blue-950 h-[38px] min-w-[38px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100">
-                    <div class="text-base">Simpan</div>
+        <form action="{{ route('weighings.update', $weighing->id) }}" method="POST" class="w-full mt-10">
+            @csrf
+            @method('PUT')
+            <div class="flex gap-10">
+                <div class="w-1/2">
+                    <label for="mother_id" class="block text-sm font-medium text-gray-700 mb-1">Nama Ibu</label>
+                    <select name="mother_id" id="mother_id" required
+                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+                        <option value="">-- Pilih Ibu --</option>
+                        @foreach ($mothers as $mother)
+                            <option value="{{ $mother->id }}" {{ $weighing->mother_id == $mother->id ? 'selected' : '' }}>
+                                {{ $mother->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="w-1/2">
+                    <label for="child_id" class="block text-sm font-medium text-gray-700 mb-1">Nama Balita</label>
+                    <select name="child_id" id="child_id" required
+                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+                        <option value="">-- Pilih Balita --</option>
+                        @foreach ($childs as $child)
+                            <option value="{{ $child->id }}" {{ $weighing->child_id == $child->id ? 'selected' : '' }}>
+                                {{ $child->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="flex gap-10 mt-5">
+                <div class="w-1/2">
+                    <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Berat Badan (kg)</label>
+                    <input type="number" step="0.01" name="weight" id="weight"
+                        value="{{ old('weight', $weighing->weight) }}" required
+                        placeholder="Masukkan berat badan..."
+                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+                </div>
+
+                <div class="w-1/2">
+                    <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Tinggi Badan (cm)</label>
+                    <input type="number" step="0.01" name="height" id="height"
+                        value="{{ old('height', $weighing->height) }}" required
+                        placeholder="Masukkan tinggi badan..."
+                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+                </div>
+            </div>
+            <div class="flex gap-10 mt-5">
+                <div class="w-1/2">
+                    <label for="lingkar_kepala" class="block text-sm font-medium text-gray-700 mb-1">Lingkar Kepala (cm)</label>
+                    <input type="number" step="0.01" name="lingkar_kepala" id="lingkar_kepala"
+                        value="{{ old('lingkar_kepala', $weighing->lingkar_kepala) }}"
+                        placeholder="Masukkan lingkar kepala..."
+                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+                </div>
+
+                <div class="w-1/2">
+                    <label for="lingkar_badan" class="block text-sm font-medium text-gray-700 mb-1">Lingkar Badan (cm)</label>
+                    <input type="number" step="0.01" name="lingkar_badan" id="lingkar_badan"
+                        value="{{ old('lingkar_badan', $weighing->lingkar_badan) }}"
+                        placeholder="Masukkan lingkar badan..."
+                        class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+                </div>
+            </div>
+            <div class="mt-5">
+                <label for="weighing_date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Timbang</label>
+                <input type="date" name="weighing_date" id="weighing_date"
+                    value="{{ old('weighing_date', $weighing->weighing_date) }}" required
+                    class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
+            </div>
+            <div class="mt-10 flex gap-5">
+                <button type="submit"
+                    class="bg-blue-700 hover:bg-blue-900 text-white font-semibold px-8 py-2 rounded-lg transition">
+                    Simpan Perubahan
                 </button>
-                <button type="submit" aria-disabled="false"
-                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed bg-red-700 stroke-white px-6 text-white hover:bg-red-950 h-[38px] min-w-[38px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100">
-                    <div class="text-base">Batal</div>
-                </button>
+
+                <a href="{{ route('weighings.index') }}"
+                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold transition-all duration-300 ease-in-out bg-green-400 px-6 text-white hover:bg-green-500 h-[38px] min-w-[38px] gap-2">
+                    Batal
+                </a>
             </div>
         </form>
     </main>

@@ -23,7 +23,7 @@ class ImmunizationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'child_id' => 'required|exists:childs,id',
+            'child_id' => 'required|exists:children,id',
             'vaksin_type' => 'required|string|max:255',
             'immunization_date' => 'required|date',
         ]);
@@ -41,7 +41,7 @@ class ImmunizationController extends Controller
     public function update(Request $request, Immunization $immunization)
     {
         $request->validate([
-            'child_id' => 'required|exists:childs,id',
+            'child_id' => 'required|exists:children,id',
             'vaksin_type' => 'required|string|max:255',
             'immunization_date' => 'required|date',
         ]);

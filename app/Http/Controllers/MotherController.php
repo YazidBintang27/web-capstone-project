@@ -23,8 +23,9 @@ class MotherController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'nik' => 'required|string|unique:mothers,nik',
-            'birthdate' => 'nullable|date',
-            'address' => 'nullable|string',
+            'birthdate' => 'required|date',
+            'address' => 'required|string',
+            'phone' => 'nullable|string'
         ]);
 
         Mother::create($request->all());
@@ -41,8 +42,9 @@ class MotherController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'nik' => 'required|string|unique:mothers,nik,' . $mother->id,
-            'birthdate' => 'nullable|date',
-            'address' => 'nullable|string',
+            'birthdate' => 'required|date',
+            'address' => 'required|string',
+            'phone' => 'nullable|string'
         ]);
 
         $mother->update($request->all());

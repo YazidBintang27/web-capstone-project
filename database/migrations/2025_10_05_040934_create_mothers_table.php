@@ -13,8 +13,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('nik')->unique();
-            $table->date('birthdate')->nullable();
-            $table->text('address')->nullable();
+            $table->date('birthdate')->require();
+            $table->text('address')->require();
+            $table->text('phone')->nullable();
             $table->timestamps();
         });
     }

@@ -11,7 +11,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WeighingController;
 
 Route::get('/', function () {
-    return view('welcome');
+    if (auth()->check()) {
+        return redirect()->route('dashboard');
+    }
+    return redirect()->route('login');
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -32,5 +35,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('weighings', WeighingController::class);
     
-    Route::resource('profile', ProfileController::class)->only(['index', 'edit', 'update']);
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });

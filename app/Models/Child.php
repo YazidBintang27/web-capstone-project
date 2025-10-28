@@ -9,6 +9,8 @@ class Child extends Model
 {
     use HasFactory;
 
+    protected $table = 'children';
+
     protected $fillable = [
         'mother_id',
         'name',
@@ -22,5 +24,9 @@ class Child extends Model
     public function mother()
     {
         return $this->belongsTo(Mother::class, 'mother_id');
+    }
+    public function immunizations()
+    {
+        return $this->hasMany(Immunization::class);
     }
 }

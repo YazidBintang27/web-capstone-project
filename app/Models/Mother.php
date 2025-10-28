@@ -14,6 +14,7 @@ class Mother extends Model
         'nik',
         'birthdate',
         'address',
+        'phone',
     ];
 
     public function childs()
