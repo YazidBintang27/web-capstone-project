@@ -19,8 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'username',
+        'phone_number',
+        'address',
+        'nik',
+        'profile_picture',
         'password',
+        'role',
     ];
 
     /**
@@ -41,8 +46,23 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isKepalaPosyandu(): bool
+    {
+        return $this->role === 'kepala_posyandu';
+    }
+
+    public function isKader(): bool
+    {
+        return $this->role === 'kader';
+    }
+
 }
