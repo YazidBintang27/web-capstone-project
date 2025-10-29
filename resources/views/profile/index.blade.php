@@ -99,7 +99,7 @@
                     </button>
 
                     <a href="{{ route('dashboard') }}"
-                        class="px-6 py-2 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-700 transition">
+                        class="px-6 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-700 transition">
                         Batal
                     </a>
                 </div>

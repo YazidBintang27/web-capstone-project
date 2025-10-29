@@ -9,15 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
     <title>Edit Data Penimbangan Balita</title>
 </head>
 <body class="flex overflow-auto box-border font-[Open_Sans]">
     <x-sidebar/>
     <main class="grow-5 mx-7.5">
         <h2 class="font-bold text-4xl text-gray-800 mb-2 mt-10">Edit Data Penimbangan Balita</h2>
+
         <div class="flex w-inherit justify-end mt-16 mx-5">
             <a href="{{ route('weighings.index') }}"
-                class="group inline-flex items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out bg-gray-700 stroke-white px-6 text-white hover:bg-gray-950 h-[42px] gap-2">
+                class="group inline-flex items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out bg-gray-700 stroke-white px-6 text-white hover:bg-gray-950 h-[42px] min-w-[42px] gap-2">
                 <span class="material-symbols-outlined text-white">arrow_back</span>
                 <div class="text-base">Kembali</div>
             </a>
@@ -92,15 +95,17 @@
                     value="{{ old('weighing_date', $weighing->weighing_date) }}" required
                     class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-600">
             </div>
-            <div class="mt-10 flex gap-5">
+           <div class="inline-flex gap-5">
                 <button type="submit"
-                    class="bg-blue-700 hover:bg-blue-900 text-white font-semibold px-8 py-2 rounded-lg transition">
-                    Simpan Perubahan
+                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold transition-all duration-300 ease-in-out bg-green-400 px-6 text-white hover:bg-green-500 h-[38px] min-w-[38px] gap-2">
+                    <div class="text-base">Simpan</div>
                 </button>
 
-                <a href="{{ route('weighings.index') }}"
-                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold transition-all duration-300 ease-in-out bg-green-400 px-6 text-white hover:bg-green-500 h-[38px] min-w-[38px] gap-2">
-                    Batal
+                <a href="{{ route('weighings.index') }}">
+                    <button type="button"
+                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed bg-red-500 stroke-white px-6 text-white hover:bg-red-950 h-[38px] min-w-[38px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100">                        
+                        <div class="text-base">Batal</div>
+                    </button>
                 </a>
             </div>
         </form>

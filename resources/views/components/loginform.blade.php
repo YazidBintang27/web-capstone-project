@@ -15,6 +15,18 @@
     <button type="submit" class="text-base bg-[#33ccff] w-lg mt-8 py-[.5em] rounded-md text-medium hover:bg-[#00aee8] ">Login</button>
 </form>
 
+@if ($errors->any())
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: '{{ session('error_title') ?? 'Terjadi Kesalahan!' }}',
+        html: `{!! implode('<br>', $errors->all()) !!}`,
+        confirmButtonColor: '#33ccff',
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+
 <script>
     const showPassword = document.getElementById('showPassword');
     const passwordInput = document.getElementById('password');

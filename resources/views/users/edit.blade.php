@@ -91,13 +91,15 @@
             </fieldset>
             <div class="inline-flex gap-5">
                 <button type="submit"
-                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold transition-all duration-300 ease-in-out bg-blue-700 stroke-white px-6 text-white hover:bg-blue-950 h-[38px] gap-2">
-                    <div class="text-base">Simpan Perubahan</div>
+                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold transition-all duration-300 ease-in-out bg-green-400 px-6 text-white hover:bg-green-500 h-[38px] min-w-[38px] gap-2">
+                    <div class="text-base">Simpan</div>
                 </button>
 
-                <a href="{{ route('users.index') }}"
-                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold transition-all duration-300 ease-in-out bg-green-400 px-6 text-white hover:bg-green-500 h-[38px] min-w-[38px] gap-2">
-                    <div class="text-base">Batal</div>
+                <a href="{{ route('users.index') }}">
+                    <button type="button"
+                    class="group inline-flex mt-8.5 items-center justify-center whitespace-nowrap rounded-lg py-2 align-middle text-sm font-semibold leading-none transition-all duration-300 ease-in-out disabled:cursor-not-allowed bg-red-500 stroke-white px-6 text-white hover:bg-red-950 h-[38px] min-w-[38px] gap-2 disabled:bg-slate-100 disabled:stroke-slate-400 disabled:text-slate-400 disabled:hover:bg-slate-100">                        
+                        <div class="text-base">Batal</div>
+                    </button>
                 </a>
             </div>
         </form>
